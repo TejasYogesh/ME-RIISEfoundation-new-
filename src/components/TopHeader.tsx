@@ -1,5 +1,3 @@
-import * as React from "react"
-
 export function TopHeader() {
   return (
     <div className="w-full bg-white py-2 font-poppins">

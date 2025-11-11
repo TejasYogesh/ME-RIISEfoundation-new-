@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card" // Ensure you have shadcn Card components
 // import { AnimateOnScroll } from "./AnimateOnScroll";
 // Define a type for each event item

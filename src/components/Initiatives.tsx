@@ -1,4 +1,3 @@
-import * as React from "react"
 // If you want autoplay, uncomment the next line and add it to plugins array
 // import Autoplay from "embla-carousel-autoplay" 
 
