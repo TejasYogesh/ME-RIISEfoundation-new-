@@ -1,64 +1,45 @@
-import { HeroCarousel } from "./components/HeroCarousel"
-import NavigationMenuDemo from "./components/Navbar"
-import { EventPopup } from "./components/PopUp"
-import { TopHeader } from "./components/TopHeader";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./Pages/Home";
+import InfrastructurePage from "./Pages/Infrastructure";
+import Achievements from "./Pages/Achievements";
+import NavigationMenuDemo from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Initiatives } from "./components/Initiatives";
-import { PragyathaEvents } from "./components/PragyathaGlimpse";
-import { TradeShow } from "./components/OtherEvents";
-import { ObjectivesSection } from "./components/Objects";
-import { AnimateOnScroll } from "./components/AnimateOnScroll";
+import { StartupsPage } from "./Pages/startups/Startups";
+import CertificationsPage from "./Pages/documents/Certificates";
+import Documents from "./Pages/documents/Documents";
+import Collaborations from "./Pages/documents/Collaborations"
+
 function App() {
-
-
   return (
-    <div className="min-h-screen flex flex-col bg-background font-poppins">
-      {/* The new header goes first */}
-      <TopHeader />
 
-      {/* Your existing Navbar goes right below it */}
-      {/* I've added 'sticky top-0 z-50' if you want it to stick when scrolling past the header.
-          Remove those classes if you want it to scroll away with the header. */}
+    <>
       <div className="sticky top-0 z-50 bg-background border-b w-full">
         <div className="flex w-full justify-center py-4">
           <NavigationMenuDemo />
         </div>
       </div>
+      {/* <BrowserRouter> */}
+      <Routes>
+        {/* Main pages */}
+        <Route path="/" element={<Home />} />
+        <Route path="/infrastructure" element={<InfrastructurePage />} />
+        <Route path="/achievements" element={<Achievements />} />
+        <Route path="/startups" element={<StartupsPage />} />
+        <Route path="/certifications" element={<CertificationsPage />} />
+        <Route path="/collaborations" element={<Collaborations/>}/>
+        <Route path="/documents" element={<Documents/>}/>
 
-      {/* If any event popup is there then commit out and fill the details in EventPop component */}
-      <EventPopup />
-
-      {/* Responsible for the Carousel */}
-      <div>
-        <HeroCarousel />
-      </div>
-
-
-
-      {/* Remaining page  */}
-
-      <main>
-        <div className="px-6">
-          <Initiatives />
-        </div>
-        <div className="px-6">
-          <AnimateOnScroll>
-            <PragyathaEvents />
-          </AnimateOnScroll>
-        </div>
-        <div className="px-6">
-          <TradeShow />
-        </div>
-        <div>
-          <ObjectivesSection />
-        </div>
-      </main>
-
+        {/* Add more pages later */}
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/nain" element={<Nain />} /> */}
+        {/* <Route path="/uba" element={<Uba />} /> */}
+        {/* etc. */}
+      </Routes>
+      {/* </BrowserRouter> */}
       <Footer />
-
-
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;

@@ -38,7 +38,7 @@ export function AnimateOnScroll({ children, className, delay = 0 }: Props) {
       
       // Transition settings
       transition={{ 
-        duration: 0.7, 
+        duration: 0.3, 
         ease: "easeInOut",
         delay: delay // Apply the delay
       }}
