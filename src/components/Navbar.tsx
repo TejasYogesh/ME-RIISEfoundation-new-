@@ -107,7 +107,7 @@ export function NavigationMenuDemo() {
       {/* LEFT: COLLEGE LOGO */}
       <Link to="/" className="flex items-center gap-2">
         <img
-          src="/MERIISEmain.png"
+          src="logos/MERIISEmain.png"
           alt="MCE Logo"
           className="h-10 md:h-12 w-auto object-contain"
         />
@@ -207,7 +207,7 @@ export function NavigationMenuDemo() {
       {/* RIGHT: ME-RIISE LOGO */}
       <Link to="/" className="flex items-center gap-2">
         <img
-          src="/malnad_college_of_engineering_logo (1).jpg"
+          src="logos/malnad_college_of_engineering_logo (1).jpg"
           alt="ME-RIISE Logo"
           className="h-10 md:h-12 w-auto object-contain"
         />

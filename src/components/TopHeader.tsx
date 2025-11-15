@@ -19,27 +19,27 @@ export default function TopHeader() {
         {/* Bottom Row: Partner Logos */}
         <div className="mt-4 flex flex-wrap items-center justify-center gap-6 md:gap-12">
           <img
-            src="moe.png" // REPLACE
+            src="logos/moe.png" // REPLACE
             alt="MoE Innovation Cell"
             className="h-10 md:h-12 w-auto object-contain"
           />
           <img
-            src="AICTE.png" // REPLACE
+            src="logos/AICTE.png" // REPLACE
             alt="AICTE"
             className="h-12 md:h-14 w-auto object-contain"
           />
           <img
-            src="IIC-logo-removebg-preview.png" // REPLACE
+            src="logos/IIC-logo-removebg-preview.png" // REPLACE
             alt="Institution's Innovation Council"
             className="h-10 md:h-12 w-auto object-contain"
           />
           <img
-            src="images (11).png" // REPLACE
+            src="logos/images (11).png" // REPLACE
             alt="NAIN"
             className="h-10 md:h-12 w-auto object-contain"
           />
           <img
-            src="UBA.png"
+            src="logos/UBA.png"
             alt="Unnat Bharat Abhiyan"
             className="h-10 md:h-12 w-auto object-contain"
           />
