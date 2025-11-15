@@ -17,6 +17,8 @@ import Faculty from "./Pages/Faculty";
 import TeamPage from "./Pages/Teams";
 import MoEIICPage from "./Pages/moe-iic";
 import NAINPage from "./Pages/Nain";
+import ContactUsPage from "./Pages/Contact";
+import EventsPage from "./Pages/Uba";
 
 function App() {
   const loadingRef = useRef<LoadingBarRef | null>(null);
@@ -68,6 +70,9 @@ function App() {
         <Route path="/team" element={<TeamPage />} />
         <Route path="/moe-iic" element={<MoEIICPage />} />
         <Route path="/nain" element={<NAINPage />} />
+
+        <Route path="/contact" element={<ContactUsPage />} />
+        <Route path="/uba" element={<EventsPage/>}/>
       </Routes>
 
       <Footer />
