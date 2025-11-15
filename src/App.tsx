@@ -15,6 +15,8 @@ import Collaborations from "./Pages/documents/Collaborations";
 import Nisp from "./Pages/documents/Nisp";
 import Faculty from "./Pages/Faculty";
 import TeamPage from "./Pages/Teams";
+import MoEIICPage from "./Pages/moe-iic";
+import NAINPage from "./Pages/Nain";
 
 function App() {
   const loadingRef = useRef<LoadingBarRef | null>(null);
@@ -36,7 +38,7 @@ function App() {
   return (
     <>
       {/* 🔵 Top Loading Bar */}
-      <LoadingBar 
+      <LoadingBar
         color="#3b82f6"
         height={4}
         shadow={false}
@@ -64,6 +66,8 @@ function App() {
         <Route path="/nisp" element={<Nisp />} />
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/moe-iic" element={<MoEIICPage />} />
+        <Route path="/nain" element={<NAINPage />} />
       </Routes>
 
       <Footer />
