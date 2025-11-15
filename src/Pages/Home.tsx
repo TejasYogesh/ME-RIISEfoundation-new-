@@ -1,7 +1,7 @@
 import { HeroCarousel } from "../components/HeroCarousel"
 // import NavigationMenuDemo from "../components/Navbar"
 import { EventPopup } from "../components/PopUp"
-import { TopHeader } from "../components/TopHeader";
+import  TopHeader from "../components/TopHeader";
 // import { Footer } from "../components/Footer";
 import { Initiatives } from "../components/Initiatives";
 import { PragyathaEvents } from "../components/PragyathaGlimpse";
