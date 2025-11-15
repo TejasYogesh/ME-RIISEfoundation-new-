@@ -1,4 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import LoadingBar from "react-top-loading-bar";
+import type { LoadingBarRef } from "react-top-loading-bar";
 
 import Home from "./Pages/Home";
 import InfrastructurePage from "./Pages/Infrastructure";
@@ -8,35 +11,61 @@ import { Footer } from "./components/Footer";
 import { StartupsPage } from "./Pages/startups/Startups";
 import CertificationsPage from "./Pages/documents/Certificates";
 import Documents from "./Pages/documents/Documents";
-import Collaborations from "./Pages/documents/Collaborations"
+import Collaborations from "./Pages/documents/Collaborations";
+import Nisp from "./Pages/documents/Nisp";
+import Faculty from "./Pages/Faculty";
+import TeamPage from "./Pages/Teams";
 
 function App() {
-  return (
+  const loadingRef = useRef<LoadingBarRef | null>(null);
+  const location = useLocation();
 
+  // ▶ Start loading bar on route change
+  useEffect(() => {
+    if (loadingRef.current) {
+      loadingRef.current.continuousStart();
+    }
+
+    const timer = setTimeout(() => {
+      loadingRef.current?.complete();
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  return (
     <>
+      {/* 🔵 Top Loading Bar */}
+      <LoadingBar 
+        color="#3b82f6"
+        height={4}
+        shadow={false}
+        ref={loadingRef}
+      />
+
+      {/* Navbar */}
       <div className="sticky top-0 z-50 bg-background border-b w-full">
         <div className="flex w-full justify-center py-4">
           <NavigationMenuDemo />
         </div>
       </div>
-      {/* <BrowserRouter> */}
+
+      {/* Routes */}
       <Routes>
-        {/* Main pages */}
         <Route path="/" element={<Home />} />
         <Route path="/infrastructure" element={<InfrastructurePage />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/startups" element={<StartupsPage />} />
-        <Route path="/certifications" element={<CertificationsPage />} />
-        <Route path="/collaborations" element={<Collaborations/>}/>
-        <Route path="/documents" element={<Documents/>}/>
+        <Route path="/documents" element={<Documents />} />
 
-        {/* Add more pages later */}
-        {/* <Route path="/about" element={<About />} /> */}
-        {/* <Route path="/nain" element={<Nain />} /> */}
-        {/* <Route path="/uba" element={<Uba />} /> */}
-        {/* etc. */}
+        {/* FULL SEPARATE PAGES */}
+        <Route path="/certifications" element={<CertificationsPage />} />
+        <Route path="/collaborations" element={<Collaborations />} />
+        <Route path="/nisp" element={<Nisp />} />
+        <Route path="/faculty" element={<Faculty />} />
+        <Route path="/team" element={<TeamPage />} />
       </Routes>
-      {/* </BrowserRouter> */}
+
       <Footer />
     </>
   );

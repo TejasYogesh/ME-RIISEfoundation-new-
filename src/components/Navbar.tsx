@@ -102,110 +102,121 @@ export function NavigationMenuDemo() {
   const isMobile = useIsMobile();
 
   return (
-    <NavigationMenu viewport={isMobile}>
-      <NavigationMenuList>
+    <div className="w-full flex items-center justify-between px-4 md:px-10 py-4 bg-white sticky top-0 z-50">
 
-        {/* HOME */}
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Link to="/" className={navigationMenuTriggerStyle()}>
-              Home
-            </Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+      {/* LEFT: COLLEGE LOGO */}
+      <Link to="/" className="flex items-center gap-2">
+        <img
+          src="/MERIISEmain.png"
+          alt="MCE Logo"
+          className="h-10 md:h-12 w-auto object-contain"
+        />
+      </Link>
 
-        {/* ABOUT US */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[550px] gap-3 p-4 grid-cols-2">
-              {aboutUs.map((item) => (
-                <ListItem key={item.title} title={item.title} href={item.href}>
-                  {item.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+      {/* CENTER: NAVIGATION MENU */}
+      <NavigationMenu viewport={isMobile} className="hidden md:flex">
+        <NavigationMenuList>
 
-        {/* MOBILE DRAWER */}
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <DrawerDemo />
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+          {/* HOME */}
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link to="/" className={navigationMenuTriggerStyle()}>
+                Home
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
 
-        {/* WINGS */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Wings of ME-RIISE</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[550px] gap-3 p-4 grid-cols-2">
-              {Wingsofmeriise.map((item) => (
-                <ListItem key={item.title} title={item.title} href={item.href}>
-                  {item.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        
-        {/* PRAGYATHA */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Pragyatha</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-4 no-underline outline-none transition-all duration-200 select-none focus:shadow-md md:p-6"
-                    to="/pragyatha"
-                  >
-                    <div className="mb-2 text-lg font-medium sm:mt-4">
-                      Pragyatha
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Our flagship annual tech fest. Explore events and archives.
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              {/* Mapping over the Pragyatha events */}
-              {pragyathaEvents.map((event) => (
-                <ListItem
-                  key={event.title}
-                  title={event.title}
-                  href={event.href}
-                >
-                  {event.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+          {/* ABOUT US */}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[550px] gap-3 p-4 grid-cols-2">
+                {aboutUs.map((item) => (
+                  <ListItem key={item.title} title={item.title} href={item.href}>
+                    {item.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-        {/* 2. ADDED: New Documents Menu Item */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Documents</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            {/* Using a simple list layout for the documents */}
-            <ul className="grid w-[300px] gap-3 p-4 md:w-[400px]">
-              {documents.map((item) => (
-                <ListItem
-                  key={item.title}
-                  title={item.title}
-                  href={item.href}
-                >
-                  {item.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+          {/* WINGS */}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Wings of ME-RIISE</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[550px] gap-3 p-4 grid-cols-2">
+                {Wingsofmeriise.map((item) => (
+                  <ListItem key={item.title} title={item.title} href={item.href}>
+                    {item.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-      </NavigationMenuList>
-    </NavigationMenu>
+          {/* PRAGYATHA */}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Pragyatha</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                  <NavigationMenuLink asChild>
+                    <Link
+                      className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-4 no-underline outline-none transition-all duration-200 md:p-6"
+                      to="/pragyatha"
+                    >
+                      <div className="mb-2 text-lg font-medium">Pragyatha</div>
+                      <p className="text-muted-foreground text-sm leading-tight">
+                        Explore event archives & highlights.
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+
+                {pragyathaEvents.map((event) => (
+                  <ListItem key={event.title} title={event.title} href={event.href}>
+                    {event.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+          {/* DOCUMENTS */}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Documents</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[300px] gap-3 p-4 md:w-[400px]">
+                {documents.map((item) => (
+                  <ListItem key={item.title} title={item.title} href={item.href}>
+                    {item.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+        </NavigationMenuList>
+      </NavigationMenu>
+
+      {/* MOBILE DRAWER (CENTERED) */}
+      <div className="md:hidden">
+        <DrawerDemo />
+      </div>
+
+      {/* RIGHT: ME-RIISE LOGO */}
+      <Link to="/" className="flex items-center gap-2">
+        <img
+          src="/malnad_college_of_engineering_logo (1).jpg"
+          alt="ME-RIISE Logo"
+          className="h-10 md:h-12 w-auto object-contain"
+        />
+      </Link>
+
+    </div>
   );
 }
+
 
 /* ----------------------------------------------------------
    FIXED LIST ITEM – works with React Router <Link> internally

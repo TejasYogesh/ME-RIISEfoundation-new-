@@ -23,18 +23,18 @@ const collaborations = [
 /* ---------- Variants ---------- */
 
 // Container controls stagger and parent opacity
-const containerVariants = {
-  hidden: { opacity: 0, y: 8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      // children will animate one after another
-      staggerChildren: 0.06,
-      when: "beforeChildren",
-    },
-  },
-};
+// const containerVariants = {
+//   hidden: { opacity: 0, y: 8 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       // children will animate one after another
+//       staggerChildren: 0.06,
+//       when: "beforeChildren",
+//     },
+//   },
+// };
 
 // Each card animation
 // const itemVariants = {
@@ -55,7 +55,7 @@ const containerVariants = {
 
 export default function Collaborations() {
   return (
-    <div className="min-h-screen bg-slate-50 text-black px-6 md:px-20 py-16 font-poppins">
+    <div className="min-h-screen bg-black text-white px-6 py-16 md:px-20 font-poppins">
 
       {/* Animated Header */}
       <motion.div
@@ -91,7 +91,7 @@ export default function Collaborations() {
       {/* Grid container with staggered children */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8"
-        variants={containerVariants}
+        // variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

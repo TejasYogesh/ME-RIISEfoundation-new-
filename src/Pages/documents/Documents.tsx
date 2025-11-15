@@ -1,99 +1,117 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import { FileBadge, Handshake, FileText, FileArchive, FolderOpen } from "lucide-react";
+import { NavLink, useNavigate } from "react-router-dom";
+import {
+  FileBadge,
+  Handshake,
+  FileText,
+  FileArchive,
+  FolderOpen,
+} from "lucide-react";
 
 const Documents: React.FC = () => {
-    const navItems = [
-        {
-            label: "Certifications",
-            path: "/certifications",
-            icon: <FileBadge className="w-4 h-4" />,
-            desc: "Official certificates issued by ME-RIISE, IIC, and institutional bodies."
-        },
-        {
-            label: "Collaborations",
-            path: "/collaborations",
-            icon: <Handshake className="w-4 h-4" />,
-            desc: "MoUs and institutional partnerships that strengthen innovation initiatives."
-        },
-        {
-            label: "NISP",
-            path: "nisp",
-            icon: <FileText className="w-4 h-4" />,
-            desc: "National Innovation & Startup Policy documents and guidelines."
-        },
-    ];
+  const navigate = useNavigate();
 
-    return (
-        <div className="min-h-screen bg-black text-white px-6 md:px-16 py-16 relative">
+  const navItems = [
+    {
+      label: "Certifications",
+      path: "/certifications",
+      icon: <FileBadge className="w-4 h-4" />,
+    },
+    {
+      label: "Collaborations",
+      path: "/collaborations",
+      icon: <Handshake className="w-4 h-4" />,
+    },
+    {
+      label: "NISP",
+      path: "/nisp",
+      icon: <FileText className="w-4 h-4" />,
+    },
+  ];
 
-            {/* Soft Background Illustration */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://cdn-icons-png.flaticon.com/512/9068/9068844.png')] bg-center bg-contain bg-no-repeat"></div>
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#020202] via-[#0a0a0a] to-black text-white px-6 md:px-20 py-12">
 
-            {/* Page Heading */}
-            <div className="relative text-center mb-14">
-                <h1 className="text-4xl md:text-6xl font-light">
-                    Documents | <span className="font-semibold text-blue-500">ME-RIISE Foundation</span>
-                </h1>
-                <p className="mt-4 max-w-3xl mx-auto text-gray-300 text-sm md:text-base leading-relaxed">
-                    Explore all official documents related to ME-RIISE including certifications, collaborations, 
-                    and policies. These documents reflect our commitment to innovation, transparency, 
-                    and excellence in nurturing an entrepreneurial ecosystem.
-                </p>
-            </div>
+      {/* PAGE HEADER */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-6xl font-light tracking-tight">
+          Discover <span className="font-semibold text-blue-500">ME-RIISE Documents</span>
+        </h1>
 
-            {/* Illustration Row */}
-            <div className="relative flex justify-center gap-10 mb-12 flex-wrap">
-                <div className="flex flex-col items-center">
-                    <FileArchive className="w-16 h-16 text-blue-500" />
-                    <p className="text-gray-400 text-sm mt-2">Official Records</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <Handshake className="w-16 h-16 text-blue-500" />
-                    <p className="text-gray-400 text-sm mt-2">Partnerships</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <FolderOpen className="w-16 h-16 text-blue-500" />
-                    <p className="text-gray-400 text-sm mt-2">Policies</p>
-                </div>
-            </div>
+        <p className="mt-4 text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          Access official documents of ME-RIISE Foundation including certifications,
+          collaborations, MoUs, innovation guidelines, and startup policy documents.
+          Click on any category below to explore further.
+        </p>
+      </div>
 
-            {/* Tabs Navigation */}
-            <div className="relative flex justify-center">
-                <nav className="bg-gray-900 border border-gray-800 rounded-2xl shadow-xl px-4 py-3">
-                    <ul className="flex gap-6 text-sm md:text-base">
-                        {navItems.map((item) => (
-                            <li key={item.path}>
-                                <NavLink
-                                    to={item.path}
-                                    className={({ isActive }) =>
-                                        `flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 
-                                         ${isActive
-                                            ? "bg-blue-600 text-white shadow-lg scale-105"
-                                            : "text-gray-300 hover:text-white hover:bg-gray-800"
-                                        }`
-                                    }
-                                >
-                                    {item.icon}
-                                    {item.label}
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </div>
+      {/* MAIN FEATURES ROW */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
 
-            {/* Section Description Under Tabs */}
-            <div className="text-center mt-6 text-gray-400 text-sm">
-                Select a category to view detailed documents and records.
-            </div>
-
-            {/* Content Section */}
-            <div className="relative mt-12 mx-auto max-w-5xl border-t border-gray-700 pt-10">
-                <Outlet />
-            </div>
+        {/* CERTIFICATIONS CARD */}
+        <div
+          onClick={() => navigate("/certifications")}
+          className="cursor-pointer flex flex-col items-center bg-white/5 border border-white/10 rounded-2xl p-8 shadow-lg hover:scale-[1.03] transition-all duration-300"
+        >
+          <FileArchive className="w-16 h-16 text-blue-500 mb-4" />
+          <h3 className="text-lg font-semibold">Certifications</h3>
+          <p className="text-gray-400 text-sm mt-2 text-center">
+            Annual recognitions, institutional certifications & IIC star ratings.
+          </p>
         </div>
-    );
+
+        {/* COLLABORATIONS CARD */}
+        <div
+          onClick={() => navigate("/collaborations")}
+          className="cursor-pointer flex flex-col items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg hover:scale-[1.03] transition-all duration-300"
+        >
+          <Handshake className="w-16 h-16 text-blue-500 mb-4" />
+          <h3 className="text-lg font-semibold">Collaborations</h3>
+          <p className="text-gray-400 text-sm mt-2 text-center">
+            MoUs, industry partnerships, and institutional collaborations.
+          </p>
+        </div>
+
+        {/* NISP CARD */}
+        <div
+          onClick={() => navigate("/nisp")}
+          className="cursor-pointer flex flex-col items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg hover:scale-[1.03] transition-all duration-300"
+        >
+          <FolderOpen className="w-16 h-16 text-blue-500 mb-4" />
+          <h3 className="text-lg font-semibold">NISP Policy</h3>
+          <p className="text-gray-400 text-sm mt-2 text-center">
+            National Innovation and Startup Policy guidelines for 2023-24.
+          </p>
+        </div>
+      </div>
+
+      {/* TABS NAVIGATION */}
+      <div className="flex justify-center mt-12">
+        <nav className="bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl shadow-xl px-6 py-4">
+          <ul className="flex gap-8 text-sm md:text-base">
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 
+                    ${
+                      isActive
+                        ? "bg-blue-600 text-white shadow-lg scale-105"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800"
+                    }`
+                  }
+                >
+                  {item.icon}
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
 };
 
 export default Documents;
