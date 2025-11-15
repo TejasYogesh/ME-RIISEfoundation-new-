@@ -20,7 +20,7 @@ import {
 const aboutUs = [
   {
     title: "ME-RIISE Foundation",
-    href: "/meriise-foundation",
+    href: "/aboutus",
     description:
       "ME-RIISE FOUNDATION promoted by Malnad College of Engineering in September, 2022.",
   },

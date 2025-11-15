@@ -19,6 +19,7 @@ import MoEIICPage from "./Pages/moe-iic";
 import NAINPage from "./Pages/Nain";
 import ContactUsPage from "./Pages/Contact";
 import EventsPage from "./Pages/Uba";
+import AboutUs from "./Pages/About";
 
 function App() {
   const loadingRef = useRef<LoadingBarRef | null>(null);
@@ -72,7 +73,8 @@ function App() {
         <Route path="/nain" element={<NAINPage />} />
 
         <Route path="/contact" element={<ContactUsPage />} />
-        <Route path="/uba" element={<EventsPage/>}/>
+        <Route path="/uba" element={<EventsPage />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
 
       <Footer />
