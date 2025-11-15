@@ -1,6 +1,4 @@
-import * as React from "react"
-
-export function TopHeader() {
+export default function TopHeader() {
   return (
     <div className="w-full bg-white py-6 font-poppins">
       <div className="container mx-auto px-4">
