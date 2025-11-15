@@ -38,21 +38,21 @@ const containerVariants = {
 };
 
 // Each card animation
-const itemVariants = {
-  hidden: { opacity: 0, y: 16, scale: 0.995 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.45, ease: "easeOut" },
-  },
-};
+// const itemVariants = {
+//   hidden: { opacity: 0, y: 16, scale: 0.995 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     scale: 1,
+//     transition: { duration: 0.45, ease: "easeOut" },
+//   },
+// };
 
 // Header animation
-const headerVariants = {
-  hidden: { opacity: 0, y: -16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
-};
+// const headerVariants = {
+//   hidden: { opacity: 0, y: -16 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+// };
 
 export default function Collaborations() {
   return (
@@ -61,7 +61,7 @@ export default function Collaborations() {
       {/* Animated Header */}
       <motion.div
         className="text-center mb-8"
-        variants={headerVariants}
+        // variants={headerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.6 }}
@@ -79,7 +79,7 @@ export default function Collaborations() {
       {/* Section title */}
       <motion.div
         className="text-center mb-10"
-        variants={headerVariants}
+        // variants={headerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.6 }}
@@ -100,7 +100,7 @@ export default function Collaborations() {
         {collaborations.map((item, index) => (
           <motion.div
             key={index}
-            variants={itemVariants}
+            // variants={itemVariants}
             whileHover={{ y: -6, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 220, damping: 20 }}
             className="group bg-white/90 backdrop-blur-md border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-2xl duration-300"
