@@ -46,7 +46,6 @@ export function HeroCarousel() {
 
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
                           <h3 className="text-xl font-bold md:text-3xl">{slide.title}</h3>
-
                           {slide.description && (
                             <p className="hidden text-sm md:block text-slate-200">
                               {slide.description}

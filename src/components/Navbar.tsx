@@ -42,7 +42,7 @@ const aboutUs = [
   },
   {
     title: "Members of ME-RIISE",
-    href: "/members",
+    href: "/faculty",
     description: "Meet the members contributing to ME-RIISE.",
   },
   {
