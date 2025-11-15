@@ -1,16 +1,76 @@
 import React from "react";
 import { FaLightbulb, FaUsers, FaSeedling, FaTools } from "react-icons/fa";
-// import Countup from "react-countup";
-import Stats from "../components/Stats"
+import { Skeleton } from "@/components/ui/skeleton";
+import Stats from "../components/Stats";
+
 const AboutUs: React.FC = () => {
+    const [loading, setLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
+    /* --------------------------------------------------------
+       🔵 SKELETON LOADING UI
+    ---------------------------------------------------------*/
+    if (loading) {
+        return (
+            <section className="bg-gray-50 py-12 px-6 md:px-20 space-y-12">
+
+                {/* Hero Image Skeleton */}
+                <div className="flex justify-center">
+                    <Skeleton className="w-full md:w-2/3 h-64 rounded-xl" />
+                </div>
+
+                {/* About Text Skeleton */}
+                <div className="space-y-4 max-w-3xl mx-auto">
+                    <Skeleton className="h-8 w-2/3 mx-auto" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-5/6 mx-auto" />
+                    <Skeleton className="h-4 w-4/6 mx-auto" />
+                </div>
+
+                {/* Vision Skeleton */}
+                <div className="bg-blue-100 rounded-lg p-8 shadow-md space-y-4">
+                    <Skeleton className="h-8 w-40 mx-auto" />
+                    <Skeleton className="h-4 w-4/5 mx-auto" />
+                </div>
+
+                {/* Four Feature Skeleton Cards */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {[1, 2, 3, 4].map((i) => (
+                        <div key={i} className="p-6 bg-white rounded-lg shadow space-y-4">
+                            <Skeleton className="h-16 w-16 mx-auto rounded-full" />
+                            <Skeleton className="h-5 w-1/2 mx-auto" />
+                            <Skeleton className="h-4 w-full" />
+                            <Skeleton className="h-4 w-5/6 mx-auto" />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Stats Skeleton */}
+                <div className="flex justify-center">
+                    <Skeleton className="h-24 w-full md:w-2/3 rounded-xl" />
+                </div>
+
+            </section>
+        );
+    }
+
+    /* --------------------------------------------------------
+       🔵 MAIN PAGE CONTENT (after loading)
+    ---------------------------------------------------------*/
     return (
         <section className="bg-gray-50 py-12 px-6 md:px-20">
+
             {/* Hero Image */}
             <div className="flex justify-center mb-10">
                 <img
                     src="/aboutus/meriisehome.png"
                     alt="ME-RIISE Foundation"
-                    className="rounded-lg shadow-lg w-full md:w-3/4"
+                    className="rounded-lg shadow-lg w-full md:w-2/3 object-cover"
                 />
             </div>
 
@@ -20,28 +80,10 @@ const AboutUs: React.FC = () => {
                     About ME-RIISE FOUNDATION
                 </h2>
                 <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                    Malnad College of Engineering (MCE) was established in the year 1960,
-                    during the second five year plan, as a joint venture of Government of
-                    India, Government of Karnataka and the Malnad Technical Education
-                    Society, Hassan. Furthering its objectives beyond education MCE
-                    undertook to create social and economic impact in the Hassan region by
-                    supporting innovations and start-ups in the field of agriculture,
-                    education and technology in the year 2018. Thus, Malnad Enclave for
-                    Research, Innovation, Incubation, Start-ups and Entrepreneurship
-                    (ME-RIISE) was formed by MCE in the year 2018 to initiate its above
-                    mentioned objectives supported by Management, Teaching staff and
-                    Students.
+                    Malnad College of Engineering (MCE) was established in the year 1960...
                 </p>
                 <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto mt-4">
-                    As a step towards further expanding its reach and enhancing its
-                    impact, ME-RIISE has set up a distinct entity, A Section 8 company,
-                    ME-RIISE FOUNDATION promoted by Malnad College of Engineering in
-                    September, 2022. This Section 8 company is composed of 5 Directors and
-                    2 Advisors. ME-RIISE FOUNDATION is committed to promote innovation,
-                    incubation, start-ups, and entrepreneurship in the region and expand
-                    its reach, enabling students/ youth and aspiring entrepreneurs to
-                    realize their potential and contribute towards the growth of the
-                    economy.
+                    ME-RIISE FOUNDATION is committed to promote innovation...
                 </p>
             </div>
 
@@ -51,62 +93,36 @@ const AboutUs: React.FC = () => {
                     <FaLightbulb /> Vision
                 </h3>
                 <p className="text-gray-700 mt-4 text-center max-w-2xl mx-auto">
-                    To engender industry ready graduates possessing magnificent skills in
-                    the arena of innovation and technological development of products/
-                    services.
+                    To engender industry-ready graduates possessing magnificent skills...
                 </p>
             </div>
 
-            {/* Activities / Impact */}
+            {/* Activities */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
                     <FaSeedling className="text-green-500 text-4xl mx-auto mb-4" />
                     <h4 className="font-semibold text-lg">Innovation</h4>
-                    <p className="text-gray-600">
-                        Application of technology to promote arts, commerce, science,
-                        sports, education, research, social welfare, and environment.
-                    </p>
+                    <p className="text-gray-600">Application of technology...</p>
                 </div>
                 <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
                     <FaUsers className="text-purple-500 text-4xl mx-auto mb-4" />
                     <h4 className="font-semibold text-lg">Training</h4>
-                    <p className="text-gray-600">
-                        Providing graduates with management and technical skills to be
-                        creative and innovative.
-                    </p>
+                    <p className="text-gray-600">Providing graduates with skills...</p>
                 </div>
                 <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
                     <FaTools className="text-blue-500 text-4xl mx-auto mb-4" />
                     <h4 className="font-semibold text-lg">Employment</h4>
-                    <p className="text-gray-600">
-                        Creating job and employment opportunities for the region.
-                    </p>
+                    <p className="text-gray-600">Creating job opportunities...</p>
                 </div>
                 <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
                     <FaLightbulb className="text-yellow-500 text-4xl mx-auto mb-4" />
                     <h4 className="font-semibold text-lg">Perseverance</h4>
-                    <p className="text-gray-600">
-                        Incubating the spirit of perseverance in the youths.
-                    </p>
+                    <p className="text-gray-600">Incubating perseverance...</p>
                 </div>
             </div>
 
-            {/* Stats */}
-            {/* <div className="mt-12 text-center">
-                <p className="text-gray-700 font-medium">
-                    Over the years, ME-RIISE FOUNDATION has orchestrated more than{" "}
-                    <span className="text-blue-700 font-bold">170 events</span> and
-                    initiatives, resulting in significant benefits for over{" "}
-                    <span className="text-blue-700 font-bold"><Countup end={4000} duration={5} /> students</span>.
-                </p>
-                <p className="text-gray-700 font-medium mt-2">
-                    Supported in bringing out{" "}
-                    <span className="text-blue-700 font-bold">25+ innovative prototypes</span>{" "}
-                    and created <span className="text-blue-700 font-bold">10+ new applications</span>.
-                </p>
-            </div> */}
-
-            <Stats/>
+            {/* STATS COMPONENT */}
+            <Stats />
         </section>
     );
 };
