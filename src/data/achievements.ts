@@ -41,4 +41,12 @@ export const ACHIEVEMENTS: Achievement[] = [
     imageName: "social-impact",
     imageUrl: "/assets/achievements/social-impact.jpg",
   },
+  {
+    id: 5,
+    title: "Testing",
+    description:
+      "Initiatives designed to translate technological prototypes into community-facing solutions, strengthening MCE's commitment to social innovation.",
+    imageName: "social-impact",
+    imageUrl: "/assets/achievements/social-impact.jpg",
+  },
 ];

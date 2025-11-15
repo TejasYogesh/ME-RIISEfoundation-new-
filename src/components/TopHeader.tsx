@@ -1,6 +1,6 @@
 export default function TopHeader() {
   return (
-    <div className="w-full bg-white py-6 font-poppins">
+    <div className="w-full bg-white py-6 font-poppins border-b-4">
       <div className="container mx-auto px-4">
         {/* Top Row: Main Text */}
         {/* Changed to justify-center as logos are removed */}
