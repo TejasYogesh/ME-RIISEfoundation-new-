@@ -1,24 +1,6 @@
 import { motion } from "framer-motion";
+import { collaborations } from "@/data/collaborations";
 
-const collaborations = [
-  { name: "Intuicient Innovations", logo: "/logos/intuicient.png", desc: "Innovation-driven solutions provider." },
-  { name: "Teragon Edtech Private Ltd", logo: "/logos/teragon.png", desc: "EdTech startup focusing on learning tools." },
-  { name: "TEQUED Labs Pvt Ltd", logo: "/logos/tequed.png", desc: "Robotics & STEM innovation company." },
-  { name: "Techie Nest", logo: "/logos/techienest.png", desc: "AI, IoT, and embedded systems training firm." },
-  { name: "SuprMentor", logo: "/logos/suprmentor.png", desc: "Corporate mentorship & career development." },
-  { name: "AVKC Hassan", logo: "/logos/avkc.png", desc: "Regional education & development board." },
-  { name: "Bharati Associates", logo: "/logos/bharati.png", desc: "Business consulting & strategy partner." },
-  { name: "SAP India Pvt Ltd", logo: "/logos/sap.png", desc: "Global ERP & enterprise software leader." },
-  { name: "AI Edge Innovations Pvt Ltd", logo: "/logos/aiedge.png", desc: "AI automation & industrial AI solutions." },
-  { name: "IKP-EDEN", logo: "/logos/eden.png", desc: "Premier incubation & research support." },
-  { name: "STEP Electronics Pvt Ltd", logo: "/logos/step.png", desc: "Advanced electronics solutions provider." },
-  { name: "AIC JITF (CIIRC)", logo: "/logos/aicjitf.png", desc: "Government-approved incubation center." },
-  { name: "Hassan SSIA", logo: "/logos/hassan-industry.png", desc: "Small scale industry association." },
-  { name: "Sahyadri Edu Dreamers", logo: "/logos/dreamers.png", desc: "Youth entrepreneurship & innovation." },
-  { name: "Tech Machinery", logo: "/logos/techmachinery.png", desc: "Industrial machines & automation." },
-  { name: "KASSIA", logo: "/logos/kassia.png", desc: "Karnataka small industries association." },
-  { name: "ICT Academy", logo: "/logos/ictacademy.png", desc: "Skill development & EdTech partner." }
-];
 
 /* ---------- Variants ---------- */
 
@@ -66,11 +48,11 @@ export default function Collaborations() {
         viewport={{ once: true, amount: 0.6 }}
       >
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+          <span className="text-transparent text-white">
             Collaborations
           </span>
         </h1>
-        <p className="text-gray-600 mt-2 text-sm md:text-base">
+        <p className="text-gray-400 mt-2 text-sm md:text-base">
           Achievements & Milestones through Partnerships
         </p>
       </motion.div>

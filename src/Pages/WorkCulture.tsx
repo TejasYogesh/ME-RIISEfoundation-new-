@@ -39,7 +39,7 @@ export default function WorkCulture() {
 
               <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black relative">
                 <iframe
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                  src="https://www.youtube.com/watch?v=ACZyEfz5YgQ&t=3s"
                   title="Work Culture Video"
                   frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

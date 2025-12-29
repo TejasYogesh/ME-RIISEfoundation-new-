@@ -84,7 +84,7 @@ export default function Achievements() {
               <motion.img
                 src={ach.imageUrl || placeholder}
                 alt={ach.imageName}
-                className="w-full md:w-1/2 rounded-xl shadow-lg object-cover aspect-[16/9]"
+                className="w-full md:w-1/2 rounded-xl shadow-lg object-cover"
                 loading="lazy"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src = placeholder;

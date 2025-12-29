@@ -67,6 +67,7 @@ const Wingsofmeriise = [
   { title: "MoE-IIC", href: "/moe-iic", description: "Institutional innovation cell." },
   { title: "NAIN", href: "/nain", description: "New Age Incubation Network." },
   { title: "UBA", href: "/uba", description: "Unnat Bharat Abhiyan initiatives." },
+  { title: "RGEP" , href: "/rgep", description: "Rajiv Gandhi Entrepreneurship Program"}
 ];
 
 // Data array for the Pragyatha dropdown
@@ -118,7 +119,7 @@ export function MobileDrawer() {
       </SheetTrigger>
       <SheetContent side="left" className="flex flex-col">
         <SheetHeader>
-          <SheetTitle>Navigation Menu</SheetTitle>
+          <SheetTitle>Explore ME-RIISE Foundation</SheetTitle>
           <SheetDescription>Explore ME-RIISE sections</SheetDescription>
         </SheetHeader>
         <div className="flex-1 overflow-y-auto">
@@ -176,7 +177,7 @@ export function MobileDrawer() {
             </div>
           </nav>
         </div>
-        <div className="mt-auto pt-4 border-t px-4">
+        <div className="my-4 py-4 border-t px-4">
           <SheetClose asChild>
             <Button variant="outline" className="w-full">Close Menu</Button>
           </SheetClose>

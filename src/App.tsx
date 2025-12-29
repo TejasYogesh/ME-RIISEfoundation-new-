@@ -27,6 +27,9 @@ function App() {
 
   // ▶ Start loading bar on route change
   useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+
     if (loadingRef.current) {
       loadingRef.current.continuousStart();
     }

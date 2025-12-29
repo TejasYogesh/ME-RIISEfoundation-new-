@@ -29,7 +29,7 @@ const infrastructureData: InfrastructureItem[] = [
     description:
       "A state-of-the-art digital creation space empowering innovation, rapid prototyping, and research. Equipped with high-performance systems for design, coding, and development.",
     imageUrl:
-      "https://placehold.co/600x400/333333/FFFFFF?text=Digital+Den",
+      "/infrastructure/DigitalDen.jpeg",
     imagePosition: "left",
     icon: <Cpu className="w-10 h-10 text-blue-400" />,
   },
@@ -39,7 +39,7 @@ const infrastructureData: InfrastructureItem[] = [
     description:
       "A modern auditorium for seminars, talks, workshops, and panel discussions. Designed with premium acoustics and a high-definition AV setup.",
     imageUrl:
-      "https://placehold.co/600x400/444444/FFFFFF?text=Colloquium+Hall",
+      "/infrastructure/ColloquiumHall.jpeg",
     imagePosition: "right",
     icon: <Presentation className="w-10 h-10 text-purple-400" />,
   },
@@ -49,7 +49,7 @@ const infrastructureData: InfrastructureItem[] = [
     description:
       "The central hub for support, queries, and campus services. Our dedicated team ensures smooth assistance and proper guidance to visitors.",
     imageUrl:
-      "https://placehold.co/600x400/555555/FFFFFF?text=Information+Desk",
+      "/infrastructure/informationDesk.jpeg",
     imagePosition: "left",
     icon: <Info className="w-10 h-10 text-green-400" />,
   },
@@ -59,7 +59,7 @@ const infrastructureData: InfrastructureItem[] = [
     description:
       "A professional meeting environment for leadership discussions, strategic planning, and executive decisions — furnished for comfort and focus.",
     imageUrl:
-      "https://placehold.co/600x400/666666/FFFFFF?text=Board+Room",
+      "/infrastructure/BoardRoom.jpg",
     imagePosition: "right",
     icon: <Building2 className="w-10 h-10 text-yellow-400" />,
   },
@@ -133,9 +133,7 @@ export default function InfrastructurePage() {
                   </p>
 
                   {/* Optional CTA Button */}
-                  <button className="mt-3 px-6 py-2 text-sm font-medium rounded-full bg-blue-600 hover:bg-blue-700 transition-all shadow-md self-start">
-                    Learn More
-                  </button>
+                   
                 </div>
               </div>
             </AnimateOnScroll>
