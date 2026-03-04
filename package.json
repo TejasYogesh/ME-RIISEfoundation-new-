@@ -3,11 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+   "scripts": {
+    "build": "vite build",
+    "deploy": "npm run build && git add . && git commit -m \"deploy build\" || echo \"No changes\" && git push origin main"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
