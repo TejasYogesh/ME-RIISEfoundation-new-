@@ -11,29 +11,24 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Deploy to Separate Branch
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to gh-deploy Branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # or 'build'
-          branch: gh-deploy
-
-      - name: Deploy to Separate Branch
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist # or 'build'
+          folder: dist
           branch: gh-deploy
 
       - name: Trigger Hostinger Deployment
+        if: success()
         run: |
-          curl -i -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}" \
-          -H "Content-Type: application/x-www-form-urlencoded" \
-          -d ""
+          curl -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}"
