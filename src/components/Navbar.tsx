@@ -218,7 +218,7 @@ export function NavigationMenuDemo() {
 
           {/* ABOUT US */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
+            <NavigationMenuTrigger>About MERIISE foundation</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[550px] gap-3 p-4 grid-cols-2">
                 {aboutUs.map((item) => (
