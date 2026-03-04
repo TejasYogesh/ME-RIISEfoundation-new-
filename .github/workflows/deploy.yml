@@ -28,7 +28,9 @@ jobs:
           folder: dist
           branch: gh-deploy
 
+      - name: Wait for GitHub to update branch
+        run: sleep 50
+
       - name: Trigger Hostinger Deployment
-        if: success()
         run: |
           curl -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}"
