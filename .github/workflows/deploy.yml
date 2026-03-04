@@ -3,7 +3,7 @@ name: Build and Push to Deploy Branch
 on:
   push:
     branches:
-      - main # Or 'master' depending on your repo
+      - main
 
 permissions:
   contents: write
@@ -18,10 +18,20 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm run build # Ensure this creates a 'dist' or 'build' folder
+          npm run build
 
       - name: Deploy to Separate Branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Change to 'build' if you are NOT using Vite
-          branch: gh-deploy # The branch Hostinger will watch
+          folder: dist # or 'build'
+          branch: gh-deploy
+
+      - name: Deploy to Separate Branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # or 'build'
+          branch: gh-deploy
+
+      - name: Trigger Hostinger Deployment
+        run: |
+          curl -X POST "${{ secrets.HOSTINGER_WEBHOOK_URL }}"
