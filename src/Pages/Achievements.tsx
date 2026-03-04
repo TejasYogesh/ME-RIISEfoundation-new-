@@ -50,7 +50,7 @@ export default function Achievements() {
       ACTUAL PAGE CONTENT
   ---------------------------------------------------- */
   return (
-    <div className="achievements-root px-6 md:px-10 py-16 max-w-5xl mx-auto">
+    <div className="achievements-root px-6 md:px-10 py-16 max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-gray-900">
@@ -78,7 +78,7 @@ export default function Achievements() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: idx * 0.12 }}
+              transition={{ duration: 0.3, delay: idx * 0.12 }}
             >
               {/* Image */}
               <motion.img

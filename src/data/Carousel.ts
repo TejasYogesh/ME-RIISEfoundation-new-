@@ -36,4 +36,5 @@ export const slidesData: SlideData[] = [
     description:
       "Industry mentors guided students on prototyping and validation.",
   },
+  
 ];

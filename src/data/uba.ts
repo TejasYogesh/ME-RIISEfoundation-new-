@@ -34,7 +34,6 @@ export const EVENTS_DATA: EventItem[] = [
     images: [
       "/assets/events/iot/iot1.jpg",
       "/assets/events/iot/iot2.jpg",
-      "/assets/events/iot/iot3.jpg",
     ],
   },
 

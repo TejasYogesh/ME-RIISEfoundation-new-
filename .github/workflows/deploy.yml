@@ -1,0 +1,27 @@
+name: Build and Push to Deploy Branch
+
+on:
+  push:
+    branches:
+      - main # Or 'master' depending on your repo
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build # Ensure this creates a 'dist' or 'build' folder
+
+      - name: Deploy to Separate Branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # Change to 'build' if you are NOT using Vite
+          branch: gh-deploy # The branch Hostinger will watch
