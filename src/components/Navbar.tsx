@@ -211,7 +211,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
               <Link to="/" className={navigationMenuTriggerStyle()}>
-                Home
+                This is Home
               </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
