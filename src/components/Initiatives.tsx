@@ -24,28 +24,28 @@ interface InitiativeItem {
 const initiativesData: InitiativeItem[] = [
   {
     id: "startup",
-    imageUrl: "https://placehold.co/400x250/E5E7EB/4B5563?text=Start+Ups", // Replace with actual image path
+    imageUrl: "/initiatives/moe.png", // Replace with actual image path
     title: "Start Ups",
     description: "Empowering innovation with cutting-edge solutions for a brighter future.",
     link: "/initiatives/startups",
   },
   {
     id: "uba-visit",
-    imageUrl: "https://placehold.co/400x250/D1D5DB/4B5563?text=UBA+Visit", // Replace with actual image path
+    imageUrl: "/initiatives/pragyatha.jpg", // Replace with actual image path
     title: "UBA Visit",
     description: "Discover this impactful collaboration with UBA driving growth and innovation together.",
     link: "/initiatives/uba-visit",
   },
   {
     id: "pragyatha",
-    imageUrl: "https://placehold.co/400x250/C0C0C0/4B5563?text=Pragyatha", // Replace with actual image path
+    imageUrl: "/initiatives/s14.jpg", // Replace with actual image path
     title: "Pragyatha",
     description: "Unlocking potential through Pragyatha's transformative strategies for success.",
     link: "/initiatives/pragyatha",
   },
    {
     id: "Upcoming Events",
-    imageUrl: "https://placehold.co/400x250/A0A0A0/4B5563?text=Innovation+Hub", // Replace with actual image path
+    imageUrl: "/initiatives/uba.jpg", // Replace with actual image path
     title: "Innovation Hub",
     description: "Fostering a culture of creativity and technological advancement for students.",
     link: "/initiatives/innovation-hub",

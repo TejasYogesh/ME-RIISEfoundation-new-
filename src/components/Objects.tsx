@@ -43,9 +43,10 @@ export function ObjectivesSection() {
           <div className="w-full">
             <img
               // Replace with your actual image path
-              src="https://placehold.co/600x400/333333/FFFFFF?text=ME-RIISE+Building" 
+              src="/aboutus/ME-RIISEBuilding.png" 
               alt="ME-RIISE Foundation Building"
-              className="rounded-xl w-full h-full object-cover shadow-lg"
+              className="rounded-xl w-full h-auto object-cover shadow-lg"
+              style={{ maxHeight: '500px' }}
             />
           </div>
 
@@ -65,7 +66,7 @@ export function ObjectivesSection() {
 
             {/* Button */}
             <Button 
-              className="mt-10 self-start bg-blue-600 hover:bg-blue-700 text-white font-semibold py-6 px-8 rounded-lg text-base"
+              className="mt-10 self-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-6 px-8 rounded-lg text-base"
               asChild
             >
               <a href="/about">Know more about ME-RIISE Foundation</a>

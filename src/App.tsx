@@ -65,6 +65,7 @@ function App() {
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/startups" element={<StartupsPage />} />
         <Route path="/documents" element={<Documents />} />
+        <Route path="/about" element={<AboutUs/>}/>
 
         {/* FULL SEPARATE PAGES */}
         <Route path="/certifications" element={<CertificationsPage />} />

@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card" // Ensure you have shadcn Card components
+import { Card, CardHeader, CardDescription, CardTitle, CardContent } from "@/components/ui/card" // Ensure you have shadcn Card components
 // import { AnimateOnScroll } from "./AnimateOnScroll";
 // Define a type for each event item
 interface PragyathaEvent {
@@ -11,63 +11,78 @@ interface PragyathaEvent {
 // Data for your Pragyatha events - replace with your actual content and image paths
 const pragyathaEventsData: PragyathaEvent[] = [
   {
-    id: "cyber-security",
-    imageUrl: "https://placehold.co/400x250/E5E7EB/4B5563?text=Cyber+Security", // Replace with actual image path
-    title: "Cyber Security and Ethical Hacking",
-    description: "This event offers a deep dive into cybersecurity, covering career opportunities, ethical hacking, threat detection, and prevention strategies...",
+    id: "Admania",
+    imageUrl: "/pragyatha/Admania.jpg",
+    title: "Admania",
+    description: "Admania was a creative marketing event that encouraged participants to develop innovative advertising strategies and campaigns, enhancing their skills in branding and market analysis."
   },
   {
-    id: "git-github",
-    imageUrl: "https://placehold.co/400x250/D1D5DB/4B5563?text=Git+Workshop", // Replace with actual image path
-    title: "Git and GitHub Workshop",
-    description: "The Git and GitHub Workshop was successfully conducted on the 30th of November and the 1st of December 2024 as a part of Pragyatha-24...",
+    id: "Block Cord",
+    imageUrl: "/pragyatha/Blockcord.jpg",
+    title: "Blockcord",
+    description: "Blockcord introduced fundamental concepts related to blockchain and collaborative platforms, focusing on practical understanding and technical skill development."
   },
   {
-    id: "entrophosis",
-    imageUrl: "https://placehold.co/400x250/C0C0C0/4B5563?text=Entrophosis", // Replace with actual image path
-    title: "Entrophosis",
-    description: "Entrophosis was a successful event that nurtured entrepreneurial thinking and problem-solving skills among participants. The combination of pitching...",
+    id: "CloudLab",
+    imageUrl: "/pragyatha/Cloudlab.jpeg",
+    title: "CloudLab",
+    description: "It is a dynamic two-day event where participants gain hands-on experience with cloud computing technologies through practical labs, demonstrations, and guided sessions.."
   },
   {
-    id: "crackathon",
-    imageUrl: "https://placehold.co/400x250/A0A0A0/4B5563?text=Crackathon", // Replace with actual image path
-    title: "Crackathon",
-    description: "Crackathon is a dynamic two-day event where teams of two collaborate to solve a given problem statement and showcase their projects to resource persons. Each team...",
+    id: "Designing 101",
+    imageUrl: "/pragyatha/Designing 101.jpg",
+    title: "Designing 101",
+    description: "A two-day hands-on workshop covering design fundamentals like typography and color theory to build practical creative skills through poster making."
   },
-];
+  {
+    id: "Entrorphosis",
+    imageUrl: "/pragyatha/Entrorphosis.jpg",
+    title: "Entrorphosis",
+    description: "Entrorphosis was an entrepreneurship-focused event that nurtured innovative thinking and problem-solving skills through idea generation, pitching, and business model development."
+  },
+  {
+    id: "UI",
+    imageUrl: "/pragyatha/UI UX.jpg",
+    title: "UI UX hackathon",
+    description: "A UI/UX Hackathon is a 24-hour design sprint where teams research and build innovative, user-centered digital prototypes through rapid collaboration."
+  }
+]
 
 export function PragyathaEvents() {
   return (
     <section className="w-full bg-white py-12 md:py-16 font-poppins">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         {/* Title */}
         <div className="mb-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Pragyatha <span className="text-gray-900">2024</span>
+            Pragyatha <span className="text-gray-900">2025</span>
           </h2>
         </div>
 
         {/* Events Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {pragyathaEventsData.map((event) => (
-            <Card key={event.id} className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <Card
+              key={event.id}
+              className="w-full sm:w-[45%] lg:w-[22%] overflow-hidden rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
               <img
                 src={event.imageUrl}
                 alt={event.title}
                 className="w-full h-48 object-cover"
               />
-              <CardHeader className="pt-4 pb-2">
-                <CardTitle className="text-lg font-semibold text-gray-800">
+
+              <CardHeader className="px-5">
+                <CardTitle className="text-xl font-semibold text-gray-800">
                   {event.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-gray-600 line-clamp-3">
+              </CardHeader>
+
+              <CardContent className="px-5 pb-5">
+                <CardDescription className="text-sm text-gray-600">
                   {event.description}
                 </CardDescription>
-              </CardHeader>
-              {/* Optional: Add a button or link in CardContent if you want a "Read More" button */}
-              {/* <CardContent className="px-6 pb-6">
-                <Button variant="link" className="p-0 h-auto text-blue-600">Read More</Button>
-              </CardContent> */}
+              </CardContent>
             </Card>
           ))}
         </div>
